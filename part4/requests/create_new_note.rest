@@ -8,6 +8,32 @@ POST http://localhost:3001/api/notes/ HTTP/1.1
 content-type: application/json
 
 {
+    "content": "test user field",
     "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT",
+    "userId": "66252d6000933cd6be2f5b04"
+}
+
+
+### 
+GET http://localhost:3001/api/users/
+
+###
+POST http://localhost:3001/api/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mluukkai",
+    "name": "Kai",
+    "password": "mluukkai"
+}
+
+###
+POST http://localhost:3001/api/notes/
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI2NjI3N2U0MDQxYmUzOGE4ZDc5NGM1ZjIiLCJpYXQiOjE3MTQzMTIxODV9.0_M_Zg-n_2wJV6CWgyf8WCs41ToDeFDA9tNGYM7IiTk
+
+{
+    "content": "Single page apps use token based auth",
+    "important": false
 }

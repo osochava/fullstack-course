@@ -8,7 +8,8 @@
     "dev": "nodemon index.js",
     "build:ui": "rm -rf dist && cd ../frontend && npm run build && cp -r dist ../backend",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "author": "Olga Sochava <osochava@gmail.com>",
   "license": "MIT",
@@ -19,6 +20,9 @@
     "mongoose": "^8.0.3"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^1.5.3",
+    "@stylistic/eslint-plugin-js": "^1.5.3",
+    "eslint": "^8.56.0",
     "nodemon": "^3.0.1"
   }
 }
